@@ -1,0 +1,44 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-custom-checkbox',
+  template: `
+<label>
+  <input type="checkbox" />
+  <span class="checkbox">
+  </span>
+</label>`,
+ styles: [`
+   label {
+     display: block;
+     width: 50px;
+     height: 50px;
+     cursor: pointer
+   }
+   input {
+     position: absolute;
+     transform: scale(0)
+   }
+   input:checked ~.checkbox {
+     transform: rotate(45deg);
+     width:20px;
+     margin-left: 16px;
+     border-color: #24c78e;
+     border-top-color: transparent;
+     border-left-color: transparent;
+     border-radius: 0
+   }
+   .checkbox {
+     display: block;
+     width: inherit;
+     height: inherit;
+     border:3px solid #434343;
+     border-radius: 6px;
+     transition: all 0.375s
+   }
+
+ `]
+})
+export class CustomCheckboxComponent {
+
+}
